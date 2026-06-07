@@ -1,0 +1,79 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="AsesoriaLegalGlobal.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asesoría Legal Global</title>
+    <link rel="stylesheet" type="text/css" href="Estilos.css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <header class="navbar">
+            <div class="navbar-brand">
+    <asp:Image ID="LogoNavbar" runat="server" ImageUrl="~/Imagenes/logo.png" 
+               AlternateText="Asesoría Legal Global" CssClass="navbar-logo" />
+    <div class="navbar-brand-text">
+        <h1>Asesoría Legal Global</h1>
+        <span class="navbar-tagline">Servicios de consultoría legal</span>
+    </div>
+</div>
+                <nav class="navbar-nav">
+                    <asp:HyperLink ID="LinkInicio" runat="server" NavigateUrl="~/Default.aspx" CssClass="nav-link">
+                        Inicio
+                    </asp:HyperLink>
+                    <asp:HyperLink ID="LinkRegistro" runat="server" NavigateUrl="~/Registro.aspx" CssClass="nav-link">
+                        Registro
+                    </asp:HyperLink>
+                    <asp:HyperLink ID="LinkDocumentos" runat="server" NavigateUrl="~/MisDocumentos.aspx" CssClass="nav-link">
+                        Mis Documentos
+                    </asp:HyperLink>
+                </nav>
+            </div>
+        </header>
+
+        <%-- ============================================
+             CONTENIDO PRINCIPAL (cada página inyecta acá)
+             ============================================ --%>
+        <main class="main-content">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </main>
+
+        <%-- ============================================
+             FOOTER (presente en todas las páginas)
+             ============================================ --%>
+        <footer class="footer">
+    <asp:Image ID="BannerFooter" runat="server" ImageUrl="~/Imagenes/banner.png" 
+               AlternateText="Asesoría Legal Global" CssClass="footer-banner" />
+    <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Asesoría Legal Global</h3>
+                    <p>Consultoría legal profesional para empresas y particulares.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p>📧 contacto@asesorialegalglobal.com</p>
+                    <p>📞 +54 351 555-0100</p>
+                    <p>📍 Córdoba, Argentina</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Información</h3>
+                    <p>Horario: Lun a Vie 9:00 - 18:00</p>
+                    <p>Atención presencial con cita previa</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Asesoría Legal Global - Todos los derechos reservados</p>
+                <p>Desarrollado por Fausto · ISSD Laboratorio de Programación 3</p>
+            </div>
+        </footer>
+
+    </form>
+</body>
+</html>
